@@ -48,6 +48,17 @@ REST ==> Representational State Transfer
     Content-length     | Original Body response length                          |  256
     Set-cookie         | Informs about cookie need to store for future response |  Set-cookie: user_id:33
     Content-encoding   | Response content encoding                              |  br
+
+    ========================STATUS CODE=====================
+
+    Status Range  |  UseCase     |   Status Code              | UseCase
+               |                 |                            |
+    1XX        | Information     |   100,101                  | Continue, Switching
+    2XX        | Success         |   200,201,202,204,206      | Ok, Created, Accepted, No-content, Partial Content
+    3XX        | Redirection     |   301,302,307,308          | Moved permanently, Temporary Moving, 302=Retain Method,301=Retain method 
+    4XX        | Client error    |   400,401,403,404,405,429  | Bad Request, Unauthorized, Authorization, Not Found, Method not allowed, Concurrent Request             
+    5XX        | Server error    |   500,502,503,504,507      | Internal Server err, Bad Gateway, Service unavailable, Gateway timeout, insufficient Storage
+
 */
 
 import express from 'express';
