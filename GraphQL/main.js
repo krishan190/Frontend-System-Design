@@ -25,7 +25,7 @@
  => real time capability  > Subscription
 
 
-   Ascept                          |     REST                        |                   GraphQL
+   Ascept                          |     REST                        |    GraphQL
                                    |                                 |
 =>  Data fetching                  | Multiple endpoints              | Single endpoints
 =>  Request Structure              | Fixed structure + HTTP methods  | Flexible (Query/Mutation)
@@ -40,7 +40,10 @@
 =>  Adoption and Community         | widely adopted                  | Rapidly growing adoption
 
 
-GraphQL has two parts
+GraphQL has two parts: 
+
+https://www.apollographql.com/docs/apollo-server/getting-started
+
    ===> Creator (Server) ===> GraphQL server libraries 
    ===> Consumer (Client) 
                  ==> fetch
@@ -48,7 +51,28 @@ GraphQL has two parts
 
 GraphQL Building Blocks
                ===> Schema/Types
-               ===> Query/Mutation
+               ===> Query/Mutation (HTTP POST ) [Query is used for GET] [Mutation is used for POST]
+
+               example ;
+                        ===> Get Data                   
+                         type Query {
+                           countries: [Country]
+                         }
+
+                         ==> type Mutation {
+                            language(id:ID) : Language;
+                         }
+
                ===> Resolver
+
+                Query : {
+                   countries : (parenet,args,context,info) {
+                      return
+                   }
+                }
+
+  open network tab and pick that graphql api and then make a copy as fetch and then paste in console and make it response inside console and get GraphQL data 
+
+   .then(res => res.json()).then(data => console.log(data))
 
 */
